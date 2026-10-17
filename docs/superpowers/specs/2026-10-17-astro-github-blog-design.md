@@ -1,5 +1,7 @@
 # 基于 Astro 的 GitHub 中文个人博客 — 设计规格
 
+> **已迁移说明（2026-10-17）**：本站主题已由 AstroPaper 切换为 Firefly（Astro 7 + Vue + Tailwind 4），本文档保留为历史设计记录；当前实现以代码与 `docs/theme-migration-firefly-2026-10-17.md` 为准。
+
 - 日期：2026-10-17（Asia/Shanghai）
 - 状态：待用户审阅（设计方案已获用户口头批准，本文档为书面规格）
 - 工作区：仓库根目录（项目代码与过程文档同仓）

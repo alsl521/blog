@@ -1,14 +1,22 @@
 import type { APIRoute } from "astro";
-import { getAssetPath } from "@/utils/withBase";
+import { url } from "@/utils/url-utils";
 
-const getRobotsTxt = (sitemapURL: URL) => `
+export const prerender = true;
+
+const robotsTxt = `
 User-agent: *
-Allow: /
+Disallow: /_astro/
+Disallow: /archive/?tag=
+Disallow: /archive/?category=
+Disallow: /archive/?uncategorized=
 
-Sitemap: ${sitemapURL.href}
-`;
+Sitemap: ${new URL(url("sitemap-index.xml"), import.meta.env.SITE).href}
+`.trim();
 
-export const GET: APIRoute = ({ site }) => {
-  const sitemapURL = new URL(getAssetPath("sitemap-index.xml"), site);
-  return new Response(getRobotsTxt(sitemapURL));
+export const GET: APIRoute = () => {
+	return new Response(robotsTxt, {
+		headers: {
+			"Content-Type": "text/plain; charset=utf-8",
+		},
+	});
 };

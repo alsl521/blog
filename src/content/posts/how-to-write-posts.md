@@ -1,15 +1,19 @@
 ---
 title: "如何写一篇文章"
-author: "alsl521"
-pubDatetime: 2026-10-16T10:00:00+08:00
-draft: false
+published: 2026-10-16T10:00:00+08:00
+description: "介绍本站文章的文件位置、frontmatter 字段、目录、代码块、图片与草稿用法。"
 tags: ["教程", "Astro"]
-description: "介绍本站文章的文件位置、frontmatter 字段、目录、代码块与草稿用法。"
+category: "开发笔记"
+pinned: false
+draft: false
+author: "alsl521"
+lang: "zh_CN"
+comment: false
 ---
 
 这篇文章说明如何在本博客新增一篇文章。
 
-## 目录
+![Markdown 图片示例](./images/demo.png)
 
 ## 文件位置
 
@@ -23,24 +27,25 @@ src/content/posts/hello-world.md  ->  /blog/posts/hello-world/
 
 ## frontmatter 字段
 
-| 字段          | 必填 | 说明                                                                                |
-| ------------- | ---- | ----------------------------------------------------------------------------------- |
-| `title`       | 是   | 文章标题                                                                            |
-| `description` | 是   | 摘要，用于列表与 SEO                                                                |
-| `pubDatetime` | 是   | 发布时间（ISO 8601，带时区）                                                        |
-| `modDatetime` | 否   | 更新时间                                                                            |
-| `tags`        | 否   | 标签数组，默认 `["others"]`                                                         |
-| `draft`       | 否   | `true` 时生产构建不展示                                                             |
-| `featured`    | 否   | `true` 时出现在首页精选                                                             |
-| `ogImage`     | 否   | 分享图：远程 URL，或相对文章文件、真实存在于 `src/` 的图片（不支持 `public/` 路径） |
+| 字段          | 必填 | 说明                                       |
+| ------------- | ---- | ------------------------------------------ |
+| `title`       | 是   | 文章标题                                   |
+| `published`   | 是   | 发布时间（ISO 8601，带时区）               |
+| `description` | 否   | 摘要，用于列表与 SEO                       |
+| `tags`        | 否   | 标签数组                                   |
+| `category`    | 否   | 分类名，例如「开发笔记」                   |
+| `draft`       | 否   | `true` 时生产构建不输出                    |
+| `pinned`      | 否   | `true` 时在列表中置顶                      |
+| `image`       | 否   | 封面图：相对文章文件的图片路径，或远程 URL |
+| `comment`     | 否   | 是否允许评论（本站暂未启用评论系统）       |
 
-## 目录的用法
+## 目录
 
-在正文中写一个单独的 `## 目录` 标题（下方不要跟其他段落），构建时会自动在该标题下生成可折叠的目录。
+文章侧边的目录由主题根据正文标题自动生成，不需要手动写目录。
 
 ## 代码高亮
 
-代码块使用 Shiki 高亮，支持 diff、行高亮等标记。
+代码块使用 Expressive Code 高亮，支持复制、行号等能力。
 
 ```ts
 const greeting: string = "你好，世界";
@@ -49,11 +54,14 @@ console.log(greeting);
 
 ## 图片
 
-推荐把图片放到 `src/assets/images/`，在正文中用相对路径引用（Astro 会自动优化并处理 base）：
+正文图片支持两种写法（都会正常显示并自动带上 `/blog/` 前缀）：
 
 ```md
-![示例图片](../../assets/images/example.png)
+![本地图片](./images/demo.png)
+![远程图片](https://example.com/image.png)
 ```
+
+推荐把图片放在文章同目录或 `src/` 下，用相对路径引用；**不要**使用 `public/` 根路径（`/images/...`），项目页部署时会缺 `/blog/` 前缀。
 
 ## 草稿
 
