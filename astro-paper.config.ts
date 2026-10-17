@@ -1,0 +1,43 @@
+import { defineAstroPaperConfig } from "./src/types/config";
+
+export default defineAstroPaperConfig({
+  site: {
+    url: "https://alsl521.github.io",
+    basePath: "/blog",
+    title: "alsl521 的博客",
+    description: "记录学习与思考",
+    author: "alsl521",
+    profile: "https://github.com/alsl521",
+    ogImage: "default-og.jpg",
+    lang: "zh-CN",
+    timezone: "Asia/Shanghai",
+    dir: "ltr",
+  },
+  posts: {
+    perPage: 6,
+    perIndex: 4,
+    scheduledPostMargin: 15 * 60 * 1000,
+  },
+  features: {
+    lightAndDarkMode: true,
+    dynamicOgImage: false,
+    showArchives: true,
+    showBackButton: true,
+    editPost: {
+      enabled: true,
+      url: "https://github.com/alsl521/blog/edit/main/",
+    },
+    search: "pagefind",
+  },
+  socials: [
+    {
+      name: "github",
+      url: "https://github.com/alsl521",
+      linkTitle: "GitHub",
+    },
+  ],
+  shareLinks: [
+    { name: "x", url: "https://x.com/intent/post?url=" },
+    { name: "mail", url: "mailto:?subject=See%20this%20post&body=" },
+  ],
+});
