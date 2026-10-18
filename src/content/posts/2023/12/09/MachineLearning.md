@@ -3,7 +3,7 @@ title: "机器学习"
 published: 2023-12-09T11:50:01+08:00
 description: "机器学习 简单学习"
 tags: ["机器学习", "Python"]
-category: "机器学习"
+category: "基础/机器学习"
 draft: false
 pinned: false
 author: "alsl521"

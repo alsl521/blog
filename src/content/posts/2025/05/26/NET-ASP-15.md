@@ -3,7 +3,7 @@ title: "ASP.NET学习记录-15-实战-Day02"
 published: 2025-05-26T19:25:36+08:00
 description: "C# .NET ASP.NET Core 基础入门 简单学习 实战"
 tags: ["C#", "ASP"]
-category: "C#/.NET"
+category: "后端/C#/.NET"
 draft: false
 pinned: false
 author: "alsl521"

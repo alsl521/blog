@@ -3,7 +3,7 @@ title: "ASP.NET学习记录-11-实践1-使用 ASP.NET Core 生成基于控制器
 published: 2025-04-18T10:13:44+08:00
 description: "C# .NET ASP.NET Core 基础入门 简单学习"
 tags: ["C#", "ASP"]
-category: "C#/.NET"
+category: "后端/C#/.NET"
 draft: false
 pinned: false
 author: "alsl521"

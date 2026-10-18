@@ -3,7 +3,7 @@ title: "Java学习（四）"
 published: 2024-01-20T17:01:41+08:00
 description: "接口、lambda 表达式、内部类、代理的相关知识"
 tags: ["Java", "学习"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

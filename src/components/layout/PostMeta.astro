@@ -4,6 +4,7 @@ import { commentConfig } from "@/config";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import { formatDateToYYYYMMDD } from "@/utils/date-utils";
+import { getCategoryBreadcrumb } from "@/utils/category-utils";
 import { getCategoryUrl, getTagUrl } from "@/utils/url-utils";
 
 export interface Props {
@@ -59,6 +60,7 @@ const {
 const path = customPath || (id ? `/posts/${id}` : "");
 const visibleTags =
 	typeof maxTags === "number" ? tags?.slice(0, maxTags) : tags;
+const categoryBreadcrumb = getCategoryBreadcrumb(category);
 ---
 
 <div
@@ -121,15 +123,33 @@ const visibleTags =
         <div class="meta-icon">
           <Icon name="material-symbols:book-2-outline-rounded" class="text-xl" />
         </div>
-        <div class="flex flex-row flex-nowrap items-center">
-          <a
-            href={getCategoryUrl(category || "")}
-            aria-label={`View all posts in the ${category || i18n(I18nKey.uncategorized)} category`}
-            class="link-lg transition text-50 text-sm font-medium
-              hover:text-(--primary) dark:hover:text-(--primary) whitespace-nowrap"
-          >
-            {category || i18n(I18nKey.uncategorized)}
-          </a>
+        <div class="flex flex-row flex-wrap items-center gap-1">
+          {categoryBreadcrumb.length === 0 ? (
+            <a
+              href={getCategoryUrl("")}
+              aria-label={`View all posts in the ${i18n(I18nKey.uncategorized)} category`}
+              class="link-lg transition text-50 text-sm font-medium
+                hover:text-(--primary) dark:hover:text-(--primary) whitespace-nowrap"
+            >
+              {i18n(I18nKey.uncategorized)}
+            </a>
+          ) : (
+            categoryBreadcrumb.map((part, index) => (
+              <span class="inline-flex items-center gap-1">
+                {index > 0 && (
+                  <span class="text-30 text-xs" aria-hidden="true">/</span>
+                )}
+                <a
+                  href={getCategoryUrl(part.path)}
+                  aria-label={`View all posts in the ${part.name} category`}
+                  class="link-lg transition text-50 text-sm font-medium
+                    hover:text-(--primary) dark:hover:text-(--primary) whitespace-nowrap"
+                >
+                  {part.name}
+                </a>
+              </span>
+            ))
+          )}
         </div>
       </div>
     )

@@ -3,7 +3,7 @@ title: "记录必备软件"
 published: 2025-04-15T19:29:21+08:00
 description: "1、PC 1. v2rayN 地址：https://github.com/2dust/v2rayN 2. potplayer（LAV+MAD） 地址：https://potplayer.daum.ne"
 tags: []
-category: "工具"
+category: "工具/软件"
 draft: false
 pinned: false
 author: "alsl521"

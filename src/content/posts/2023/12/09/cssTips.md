@@ -3,7 +3,7 @@ title: "CSS--内容居中"
 published: 2023-12-09T10:56:44+08:00
 description: "CSS小知识总结"
 tags: ["前端", "CSS"]
-category: "前端"
+category: "前端/CSS"
 draft: false
 pinned: false
 author: "alsl521"

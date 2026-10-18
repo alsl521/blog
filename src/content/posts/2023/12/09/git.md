@@ -3,7 +3,7 @@ title: "git"
 published: 2023-12-09T09:42:11+08:00
 description: "Git简单学习"
 tags: ["git"]
-category: "工具"
+category: "工具/Git"
 draft: false
 pinned: false
 author: "alsl521"

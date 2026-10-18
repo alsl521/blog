@@ -3,7 +3,7 @@ title: "耦合系统重建-前端-用户登录和注册"
 published: 2024-03-17T11:05:53+08:00
 description: "为了进一步深刻的理解vue和SpringBoot的相关知识，特地将系统重构，以期望弥补初始设计的不足，耦合系统重建-前端-用户登录"
 tags: ["前端", "vue", "vue实战"]
-category: "前端"
+category: "前端/Vue"
 draft: false
 pinned: false
 author: "alsl521"

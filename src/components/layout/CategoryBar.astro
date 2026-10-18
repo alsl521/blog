@@ -2,7 +2,8 @@
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
 import { Icon } from "astro-icon/components";
-import { getCategoryList, getSortedPostsList } from "@/utils/content-utils";
+import { getCategoryTree, getSortedPostsList } from "@/utils/content-utils";
+import { getCategoryParent } from "@/utils/category-utils";
 import { url } from "@/utils/url-utils";
 
 interface Props {
@@ -11,7 +12,7 @@ interface Props {
 
 const { currentPostCategory } = Astro.props as Props;
 
-const categories = await getCategoryList();
+const categories = await getCategoryTree();
 const totalPosts = (await getSortedPostsList()).length;
 const homeUrl = url("/");
 const archiveUrl = url("/archive/");
@@ -26,8 +27,9 @@ const isHome = pathname === homePath || pathname === "" || pathname === "/";
 const isCategories = pathname === "/categories";
 const isArchive = pathname === archivePath;
 const postCategory = (currentPostCategory || "").trim();
+const postCategoryParent = getCategoryParent(postCategory);
 
-// 返回某个 pill 的初始高亮属性：active（强）或 soft-active（弱，文章页所属分类）
+// 返回某个 pill 的初始高亮属性：active（强）或 soft-active（弱，文章页所属父分类）
 function initialActive(categoryName: string): {
 	active?: boolean;
 	soft?: boolean;
@@ -36,7 +38,7 @@ function initialActive(categoryName: string): {
 	if (isCategories)
 		return categoryName === "__categories__" ? { active: true } : {};
 	if (isArchive) return categoryName === "__archive__" ? { active: true } : {};
-	if (postCategory && categoryName === postCategory) return { soft: true };
+	if (postCategoryParent && categoryName === postCategoryParent) return { soft: true };
 	return {};
 }
 ---
@@ -75,18 +77,18 @@ function initialActive(categoryName: string): {
       <div class="category-scroll flex gap-2 overflow-x-auto">
         {
           categories.map((cat) => {
-            const active = initialActive(cat.name);
+            const active = initialActive(cat.fullPath);
             return (
             <a
               href={cat.url}
               class="category-pill focus-ring-inset text-sm px-4 py-1.5 whitespace-nowrap
                      transition-colors duration-150 ease-out flex items-center justify-center"
-              data-category-name={cat.name}
+              data-category-name={cat.fullPath}
               data-active={active.active ? "" : undefined}
               data-soft-active={active.soft ? "" : undefined}
             >
               {cat.name}
-              <span class="pill-count">{cat.count}</span>
+              <span class="pill-count">{cat.total}</span>
             </a>
             );
           })
@@ -192,6 +194,7 @@ function initialActive(categoryName: string): {
     const { isHome, isArchive, isCategories, activeCategory, hasTag, hasUncategorized } =
       getCategoryBarState(bar, currentUrl);
     const postCategory = (bar.getAttribute("data-current-post-category") || "").trim();
+    const postCategoryParent = postCategory.split("/")[0].trim();
 
     const pills = bar.querySelectorAll<HTMLAnchorElement>(".category-pill");
     pills.forEach((pill) => {
@@ -213,7 +216,8 @@ function initialActive(categoryName: string): {
 
     if (activeCategory) {
       pills.forEach((pill) => {
-        if (pill.getAttribute("data-category-name") === activeCategory) {
+        const name = pill.getAttribute("data-category-name") || "";
+        if (name === activeCategory || activeCategory.startsWith(`${name}/`)) {
           pill.setAttribute("data-active", "");
         }
       });
@@ -226,9 +230,9 @@ function initialActive(categoryName: string): {
       return;
     }
 
-    if (postCategory) {
+    if (postCategoryParent) {
       pills.forEach((pill) => {
-        if (pill.getAttribute("data-category-name") === postCategory) {
+        if (pill.getAttribute("data-category-name") === postCategoryParent) {
           pill.setAttribute("data-soft-active", "");
         }
       });

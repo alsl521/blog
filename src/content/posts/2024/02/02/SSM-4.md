@@ -3,7 +3,7 @@ title: "Java学习-SSM-4"
 published: 2024-02-02T10:47:41+08:00
 description: "SpringMVC的相关知识"
 tags: ["Java", "学习", "SSM"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

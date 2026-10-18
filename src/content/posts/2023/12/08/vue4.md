@@ -3,7 +3,7 @@ title: "vue学习笔记--Vue Router"
 published: 2023-12-08T21:33:00+08:00
 description: "Vue Router"
 tags: ["前端", "vue"]
-category: "前端"
+category: "前端/Vue"
 draft: false
 pinned: false
 author: "alsl521"

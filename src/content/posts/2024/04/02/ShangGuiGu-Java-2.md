@@ -3,7 +3,7 @@ title: "尚硅谷Java-day02"
 published: 2024-04-02T13:16:59+08:00
 description: "变量  数据类型转换   运算符"
 tags: ["Java", "学习"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

@@ -3,7 +3,7 @@ title: "Java学习（一）"
 published: 2024-01-03T20:15:02+08:00
 description: "Java程序设计概述、Java的基本程序设计结构的相关知识"
 tags: ["Java", "学习"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

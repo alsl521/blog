@@ -3,7 +3,7 @@ title: "NET-ASP-16-实战-Day03"
 published: 2025-05-28T10:57:23+08:00
 description: "C# .NET ASP.NET Core 基础入门 简单学习 实战"
 tags: ["C#", "ASP"]
-category: "C#/.NET"
+category: "后端/C#/.NET"
 draft: false
 pinned: false
 author: "alsl521"

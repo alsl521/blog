@@ -3,7 +3,7 @@ title: "C++基础入门第二章"
 published: 2023-12-08T18:51:00+08:00
 description: "C++变量和基本类型"
 tags: ["C++基础入门", "学习"]
-category: "C++"
+category: "基础/C++"
 draft: false
 pinned: false
 author: "alsl521"

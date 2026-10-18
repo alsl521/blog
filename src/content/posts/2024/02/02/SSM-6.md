@@ -3,7 +3,7 @@ title: "Java学习-SSM-6"
 published: 2024-02-02T14:44:53+08:00
 description: "Maven的相关知识"
 tags: ["Java", "学习", "SSM"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

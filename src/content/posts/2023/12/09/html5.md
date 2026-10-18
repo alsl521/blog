@@ -3,7 +3,7 @@ title: "HTML+CSS--HTML5"
 published: 2023-12-09T10:56:02+08:00
 description: "HTML5简单学习"
 tags: ["前端", "HTML", "HTML5"]
-category: "前端"
+category: "前端/HTML"
 draft: false
 pinned: false
 author: "alsl521"

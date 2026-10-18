@@ -1,6 +1,11 @@
 import { type CollectionEntry, getCollection } from "astro:content";
 import I18nKey from "@i18n/i18nKey";
 import { i18n } from "@i18n/translation";
+import {
+	buildCategoryTree,
+	getCategoryParent,
+	type CategoryTreeNode,
+} from "@utils/category-utils";
 import { getCategoryUrl } from "@utils/url-utils";
 
 // // Retrieve posts and sort them by publication date
@@ -183,6 +188,14 @@ export type Category = {
 	url: string;
 };
 
+/**
+ * 分类树（最多两级）。用于分类页、侧边栏、分类条等需要阶梯展示的位置。
+ * 扁平分类列表仍由 getCategoryList() 提供（精确匹配、URL 不变）。
+ */
+export async function getCategoryTree(): Promise<CategoryTreeNode[]> {
+	return buildCategoryTree(await getCategoryList());
+}
+
 export async function getCategoryList(): Promise<Category[]> {
 	const allBlogPosts = await getCollection<"posts">("posts", ({ data }) => {
 		return import.meta.env.PROD ? data.draft !== true : true;
@@ -291,10 +304,14 @@ export async function getRelatedPosts(
 		const timeFreshnessScore =
 			30 * Math.exp((-Math.LN2 * daysSincePublished) / 180);
 
-		// categoryBonus (0 or 10)
+		// categoryBonus (0 or 10)：同一父分类（或同一分类）加 10 分
 		const postCategory = post.data.category || "";
+		const currentCategoryParent = getCategoryParent(currentCategory);
+		const postCategoryParent = getCategoryParent(postCategory);
 		const categoryBonus =
-			currentCategory && postCategory && currentCategory === postCategory
+			currentCategoryParent &&
+			postCategoryParent &&
+			currentCategoryParent === postCategoryParent
 				? 10
 				: 0;
 

@@ -3,7 +3,7 @@ title: "vue学习笔记--Vue基础知识"
 published: 2023-12-08T21:30:00+08:00
 description: "Vue基础知识"
 tags: ["前端", "vue"]
-category: "前端"
+category: "前端/Vue"
 draft: false
 pinned: false
 author: "alsl521"

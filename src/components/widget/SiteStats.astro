@@ -6,7 +6,7 @@ import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
 import type { WidgetComponentConfig } from "@/types/config";
 import {
-	getCategoryList,
+	getCategoryTree,
 	getSortedPosts,
 	getTagList,
 } from "@/utils/content-utils";
@@ -26,7 +26,7 @@ const siteStartDate = siteConfig.siteStartDate || "2025-01-01";
 
 // 获取所有文章
 const posts = await getSortedPosts();
-const categories = await getCategoryList();
+const categories = await getCategoryTree();
 const tags = await getTagList();
 
 // 计算总字数

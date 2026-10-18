@@ -3,7 +3,7 @@ title: "Java学习（五）"
 published: 2024-02-14T11:27:52+08:00
 description: "异常、断言、日志、、泛型程序设计的相关知识"
 tags: ["Java", "学习"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

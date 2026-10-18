@@ -3,7 +3,7 @@ title: "Java 基础加强"
 published: 2023-12-09T11:25:28+08:00
 description: "Java 基础加强 简单学习"
 tags: ["Java"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

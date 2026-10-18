@@ -3,7 +3,7 @@ title: "Vue3-尚硅谷"
 published: 2023-12-19T19:01:50+08:00
 description: "1. Vue3简介 2020年9月18日， Vue.js 发布版 3.0 版本，代号： One Piece （n 经历了：4800+次提交、40+个RFC、600+次PR、300+贡献者 官方发版地址"
 tags: ["前端", "vue"]
-category: "前端"
+category: "前端/Vue"
 draft: false
 pinned: false
 author: "alsl521"

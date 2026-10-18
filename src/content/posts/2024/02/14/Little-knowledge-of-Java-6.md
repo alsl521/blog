@@ -3,7 +3,7 @@ title: "Java学习（六）"
 published: 2024-02-14T21:43:30+08:00
 description: "集合的相关知识"
 tags: ["Java", "学习"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

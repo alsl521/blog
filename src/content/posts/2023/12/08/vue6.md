@@ -3,7 +3,7 @@ title: "vue学习笔记--数据传递"
 published: 2023-12-08T21:35:00+08:00
 description: "数据传递"
 tags: ["前端", "vue"]
-category: "前端"
+category: "前端/Vue"
 draft: false
 pinned: false
 author: "alsl521"

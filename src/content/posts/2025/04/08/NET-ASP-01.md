@@ -3,7 +3,7 @@ title: "ASP.NET学习记录-01-基础知识"
 published: 2025-04-08T19:21:33+08:00
 description: "C# ​.NET ASP.NET Core 基础入门 简单学习"
 tags: ["C#", "ASP"]
-category: "C#/.NET"
+category: "后端/C#/.NET"
 draft: false
 pinned: false
 author: "alsl521"

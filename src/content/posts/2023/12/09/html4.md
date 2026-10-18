@@ -3,7 +3,7 @@ title: "HTML+CSS--HTML4"
 published: 2023-12-09T10:55:55+08:00
 description: "HTML4简单学习"
 tags: ["前端", "HTML", "HTML4"]
-category: "前端"
+category: "前端/HTML"
 draft: false
 pinned: false
 author: "alsl521"

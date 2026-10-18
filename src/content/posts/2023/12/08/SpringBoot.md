@@ -3,7 +3,7 @@ title: "SpringBoot小知识"
 published: 2023-12-08T21:34:00+08:00
 description: "SpringBoot不为人知的小知识"
 tags: ["后端", "Java"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

@@ -3,7 +3,7 @@ title: "Java学习-SSM-2"
 published: 2024-02-01T09:57:10+08:00
 description: "Spring的相关知识"
 tags: ["Java", "学习", "SSM"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

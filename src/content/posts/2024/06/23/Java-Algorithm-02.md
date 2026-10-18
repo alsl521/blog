@@ -3,7 +3,7 @@ title: "链表"
 published: 2024-06-23T15:04:47+08:00
 description: "Java 算法 基础入门 简单学习"
 tags: ["Java"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

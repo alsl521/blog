@@ -3,7 +3,7 @@ title: "黑马程序员--Linux安装各类软件"
 published: 2023-12-11T20:17:05+08:00
 description: "Linux 简单学习"
 tags: ["Linux", "学习"]
-category: "计算机基础"
+category: "基础/计算机基础"
 draft: false
 pinned: false
 author: "alsl521"

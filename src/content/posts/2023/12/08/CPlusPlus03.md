@@ -3,7 +3,7 @@ title: "C++基础入门第三章"
 published: 2023-12-08T18:52:00+08:00
 description: "C++字符串、向量和数组"
 tags: ["C++基础入门", "学习"]
-category: "C++"
+category: "基础/C++"
 draft: false
 pinned: false
 author: "alsl521"

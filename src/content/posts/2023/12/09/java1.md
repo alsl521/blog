@@ -3,7 +3,7 @@ title: "Java 基础入门"
 published: 2023-12-09T11:24:28+08:00
 description: "Java 基础入门 简单学习"
 tags: ["Java"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

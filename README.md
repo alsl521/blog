@@ -46,7 +46,7 @@ title: "文章标题"
 published: 2026-10-17T20:00:00+08:00
 description: "文章摘要，用于列表与 SEO"
 tags: ["随笔", "Astro"]
-category: "生活随笔"
+category: "后端/Java" # 支持两级分类（父/子）；一级分类直接写 "生活随笔"
 pinned: false
 draft: false
 image: "./images/cover.png" # 可选：封面图
@@ -62,7 +62,7 @@ comment: false
 | `published`   | 是   | 发布时间（ISO 8601，带时区）                 |
 | `description` | 否   | 摘要                                         |
 | `tags`        | 否   | 标签数组                                     |
-| `category`    | 否   | 分类名（会出现在分类导航与归档页）           |
+| `category`    | 否   | 分类名，支持两级 `父/子`（如 `后端/Java`）   |
 | `draft`       | 否   | `true` 时生产构建不输出                      |
 | `pinned`      | 否   | `true` 时列表置顶                            |
 | `image`       | 否   | 封面图：相对文章的图片路径，或远程 URL       |
@@ -74,6 +74,15 @@ comment: false
   `![说明](./images/demo.png)`；也可以直接使用远程图片 URL。相对图片会被自动优化并正确带上 `/blog/` 前缀。
 - **封面图**：`image: "./images/cover.png"` 或远程 URL。
 - **不要**在 Markdown 里用 `public/` 根路径（如 `![x](/images/x.png)`）——项目页部署时会缺 `/blog/` 前缀；需要放 `public/` 的图片请写成完整站内路径并自行确认线上地址。
+
+### 分类层级
+
+分类支持两级，frontmatter 写成 `category: "后端/Java"` 表示“后端”下的“Java”：
+
+- 分类页与侧边栏按树状（父分类 + 缩进子分类）显示；顶部分类条只显示父分类
+- 点父分类会筛选该组全部文章（如 `/archive/?category=后端` 包含所有 `后端/...` 子分类）
+- 子分类精确筛选：`/archive/?category=后端%2FJava`
+- 一级分类直接写 `category: "生活随笔"` 即可；新增子分类不需要改配置，只要文章里写对应 `父/子` 路径
 
 ## 站点配置
 

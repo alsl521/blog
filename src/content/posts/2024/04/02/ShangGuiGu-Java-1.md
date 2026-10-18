@@ -3,7 +3,7 @@ title: "尚硅谷Java-day01"
 published: 2024-04-02T13:07:26+08:00
 description: "环境变量,HelloWorld"
 tags: ["Java", "学习"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

@@ -2,6 +2,7 @@
 import { siteConfig } from "@/config";
 import I18nKey from "@/i18n/i18nKey";
 import { i18n } from "@/i18n/translation";
+import { formatCategoryLabel } from "@/utils/category-utils";
 import { getSortedPostsList } from "@/utils/content-utils";
 import { getPostUrlBySlug, url } from "@/utils/url-utils";
 
@@ -130,11 +131,14 @@ const foldOnFilter = collapseAllButFirst;
                             group-hover:translate-x-1 transition-all group-hover:text-(--primary)
                             text-75 pr-8 whitespace-nowrap text-ellipsis overflow-hidden flex items-center gap-2">
                   {post.data.category && (
-                    <span class="shrink-0 inline-block text-xs font-medium px-1.5 py-0.5 rounded-sm
+                    <span
+                      class="shrink-0 inline-block text-xs font-medium px-1.5 py-0.5 rounded-sm
                                  bg-[oklch(0.95_0.025_var(--hue))] dark:bg-[oklch(0.25_0.025_var(--hue))]
                                  text-(--primary) group-hover:bg-(--primary) group-hover:text-white!
-                                 transition-colors">
-                      {post.data.category}
+                                 transition-colors"
+                      title={post.data.category}
+                    >
+                      {formatCategoryLabel(post.data.category)}
                     </span>
                   )}
                   <span class="truncate">{post.data.title}</span>
@@ -214,7 +218,13 @@ const foldOnFilter = collapseAllButFirst;
             match = match && rowTags.some((t) => tags.includes(t));
           }
           if (categories.length > 0) {
-            match = match && !!rowCategory && categories.includes(rowCategory);
+            match =
+              match &&
+              !!rowCategory &&
+              categories.some(
+                (category) =>
+                  rowCategory === category || rowCategory.startsWith(`${category}/`),
+              );
           }
           if (uncategorized) {
             match = match && !rowCategory;
@@ -288,7 +298,9 @@ const foldOnFilter = collapseAllButFirst;
 
       const fmtValues = (f) => {
         const prefix = f.isTag ? "#" : "";
-        return f.values.map((v) => `${prefix}${v}`).join(" / ");
+        return f.values
+          .map((v) => `${prefix}${String(v).replaceAll("/", " / ")}`)
+          .join(" / ");
       };
 
       if (linkEl) {
@@ -322,7 +334,9 @@ const foldOnFilter = collapseAllButFirst;
 
       let newTitle = "";
       if (categories.length > 0) {
-        newTitle = categories.join(" / ");
+        newTitle = categories
+          .map((category) => String(category).replaceAll("/", " / "))
+          .join(" / ");
       } else if (uncategorized) {
         newTitle = i18nStrings.uncategorized;
       } else if (tags.length > 0) {

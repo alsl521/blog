@@ -3,7 +3,7 @@ title: "Java学习（三）"
 published: 2024-01-19T11:06:40+08:00
 description: "Object、泛型数组列表、对象包装器与自动装箱、参数数量可变的方法、枚举类、反射的相关知识"
 tags: ["Java", "学习"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

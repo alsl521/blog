@@ -3,7 +3,7 @@ title: "SpringBoot基础知识"
 published: 2024-03-16T14:02:19+08:00
 description: "SpringBoot基础知识"
 tags: ["后端", "Java"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"

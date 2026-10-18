@@ -3,7 +3,7 @@ title: "HTML+CSS--CSS2"
 published: 2023-12-09T10:56:18+08:00
 description: "CSS2相关知识"
 tags: ["前端", "CSS", "CSS2"]
-category: "前端"
+category: "前端/CSS"
 draft: false
 pinned: false
 author: "alsl521"

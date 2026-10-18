@@ -3,7 +3,7 @@ title: "Java学习（七）"
 published: 2024-02-17T16:06:07+08:00
 description: "并发的相关知识"
 tags: ["Java", "学习"]
-category: "Java"
+category: "后端/Java"
 draft: false
 pinned: false
 author: "alsl521"
