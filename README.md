@@ -123,6 +123,10 @@ env:
 
 若改用用户主页仓库 `alsl521.github.io` 或自定义域名：把 `SITE_BASE` 改为 `/`，同时修改 `src/config/siteConfig.ts` 的 `site_url` 与 `astro.config.mjs` 的 `base`。
 
+## 旧文迁移
+
+2026-10 已把旧 Hexo 博客（私有仓库 lsl521/HEXO）的 **64 篇**文章迁入本站（当前共 67 篇），按 src/content/posts/<年>/<月>/<日>/ 保存，正文图片使用与新文章相同的相对路径，构建时由 Astro 优化；少量旧文 HTML <img> 图片放在 public/posts-assets/。详见 docs/hexo-migration-2026-10-18.md。
+
 ## 许可与致谢
 
 - 主题：[Firefly](https://github.com/CuteLeaf/Firefly)（MIT，Copyright © 2024 saicaca / 2025 CuteLeaf），基于 [Fuwari](https://github.com/saicaca/fuwari) 演进；主题素材与字体的授权说明见上游仓库。
